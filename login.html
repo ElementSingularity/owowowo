@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            UATASA login
+        </title>
+    </head>
+    <body>
+        <p id="loginStatus">
+            hello
+        </p>
+        <input id = "fName">
+        <input id = "lName">
+        <input id = "badgeID">
+        <script>
+            function checkCreds() {
+    console.log("checkCreds() started");
+    var firstName = document.getElementById("fName").value;
+    var lastName = document.getElementById("lName").value;
+    var badgeNumb = document.getElementById("badgeID").value;
+    var fullName = firstName + " " + lastName;
+
+    console.log("Full Name is " + fullName);
+
+    if (fullName.length > 20) {
+        document.getElementById("loginStatus").innerHTML = "Invalid Full Name! Please Submit a valid full name.";
+
+    } else if (badgeNumb > 999) {
+        document.getElementById("loginStatus").innerHTML = "Invalid badge number! please submit a valid badge number.";
+    }
+    else {
+        document.getElementById("loginStatus").innerHTML = "Correct Entry. Weclome " + fullName;
+    }
+
+}
+        </script>
+        <button onclick = "checkCreds()">
+        Check Credentials
+        </button>
+    </body>
+</html>

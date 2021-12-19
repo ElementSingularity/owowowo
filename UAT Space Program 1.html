@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Ryan Yoo-->
+<html>
+    <head>
+        <script>
+            //alert("This is a test of the alert function")
+        </script>
+        <title> UAT Space Program </title>
+        <style>
+            body{
+                background-color: lightcoral;
+                text-decoration-color: crimson;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="UATspaceLogo-1.jpg">
+
+        <h1>UAT SPACE PROGRAM</h1>
+        <p>hello, this is an experiment.</p>
+        <br>
+        <br>
+        <script>
+            function countdown(ree) {
+var currTime = 50;
+var timer = 0;
+if ( ree == true) {
+            for (i = 10; i > 0; i--)
+            {
+                setTimeout(function()
+                {
+                    currTime = currTime - 5;
+                    alert("The time is "+currTime);
+                    if (currTime == 0)
+                    {
+                        document.getElementById("Countdown Timer").innerHTML = "Blastoff!";
+                    }
+                    else if ( currTime <= 25)
+                    {
+                        document.getElementById("Countdown Timer").innerHTML = "Warning less than 1/2 way to launch, time left = "+currTime;
+                    }
+                    else
+                    {
+                    document.getElementById("Countdown Timer").innerHTML = currTime;
+                    }
+                }, timer += 5000);
+                
+            }
+        }
+    else
+    {
+        document.getElementById("Countdown Timer").innerHTML = currTime;
+        currTime = 50;
+    }
+}
+function playCraps() {
+    console.log("playCraps() function Started");
+    var die1 = Math.ceil(Math.random()*6);
+    var die2 = Math.ceil(Math.random()*6);
+    var sum = die1 - die2;
+    document.write("Die 1 = " + die1);
+    document.write("<br/>");
+    document.write("Die 2 = " + die2);
+    document.write("<br/>");
+    document.write("Sum = " + sum);
+    document.write("<br/>");
+    if (sum == 7 || sum == 11) {
+        document.write("CRAPS - you lose");
+        document.write("<br/>");
+    }
+    else if (die1 == die2 && die1 % 2 == 0) {
+        document.write("DOUBLES - you win");
+        document.write("<br/>");
+    }
+    else {
+        document.write("DRAW - you neither won nor lost. Please try again.");
+        document.write("<br/>");
+    }
+}
+        </script>
+        <a href = "login.html" >
+            <button>
+                Login
+            </button>
+        </a>
+        <button onclick = "playCraps()">
+            Play Craps
+        </button>
+        <button onclick="countdown(true)">
+            Start
+        </button>
+        <button onclick="countdown(false)">
+            Stop
+        </button>
+        <br>
+        <br>
+        <p id = "Countdown Timer"> Initiating Countdown Sequence</p>
+        
+    </body>
+
+</html>
